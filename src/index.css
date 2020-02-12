@@ -23,6 +23,7 @@ td {
 .inputfield {
   padding: 10px;
   border: 2px solid #282c34;
+  border-collapse: collapse;
 }
 
 th,
@@ -52,4 +53,8 @@ button:hover {
   background-color: #3c4454;
 }
 
+input {
+  width: 150px;
+  
+}
 

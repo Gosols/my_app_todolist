@@ -1,4 +1,5 @@
 import React from "react";
+
 export default function FormComp(props) {
   return (
     <div>
@@ -11,11 +12,11 @@ export default function FormComp(props) {
           value={props.input.desc}
           onChange={props.inputChanged}
         />
+
         <label> Date: </label>
         <input
           name="date"
           type="date"
-          placeholder="DD.MM.YYYY"
           value={props.input.date}
           onChange={props.inputChanged}
         ></input>
