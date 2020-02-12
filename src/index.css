@@ -11,3 +11,45 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+table,
+th,
+td {
+  margin-left: auto;
+  margin-right: auto;
+  border: 2px solid #282c34;
+  margin-top: 10px;
+  border-collapse: collapse;
+}
+.inputfield {
+  padding: 10px;
+  border: 2px solid #282c34;
+}
+
+th,
+td {
+  padding: 10px;
+}
+
+th {
+  background-color: #282c34;
+  color: white;
+}
+
+button {
+  background-color: #282c34;
+  color: white;
+  border: none;
+  display: inline-block;
+  
+}
+
+button, input {
+  padding: 10px 15px;
+  transition-duration: 0.3s;
+}
+
+button:hover {
+  background-color: #3c4454;
+}
+
+
