@@ -3,7 +3,8 @@ import ReactTable from "react-table-v6";
 import "react-table-v6/react-table.css";
 
 export default function Todolist(props) {
-  const [todos, setTodos] = React.useState([]);
+  const [todos, setTodos] = React.useState(props.list);
+  props.callback(todos);
 
   const deleteTodo = event => {
     setTodos(todos.filter((_, i) => i !== Number(event.target.id)));

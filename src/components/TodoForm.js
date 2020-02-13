@@ -7,7 +7,7 @@ export default function TodoForm(props) {
     event.preventDefault();
 
     setInput({ desc: "", date: "" });
-    props.appCallback(input);
+    props.callback(input);
     
   };
 
