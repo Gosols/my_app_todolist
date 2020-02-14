@@ -1,26 +1,36 @@
 import React from "react";
 import "./App.css";
-import Todolist from "./components/Todolist";
+import TodoTable from "./components/TodoTable";
 import TodoForm from "./components/TodoForm";
 
 export default function App() {
-  const [input, setInput] = React.useState({});
-  const [list, setList] = React.useState([]);
+  //Tähän tallennetaan TodoForm.js:n lähettämä data
+  //Tämä lähetetään propsina Todolist.js:lle jotta sinne saadaan kuljetettua
+  //data TodoFormista
+  const [input, setInput] = React.useState({ desc: "", date: "" });
 
+  //käytetään, jotta Todolist.js:n useEffect ei käynnisty ensimmäisellä renderöinnillä
+  //koska muuten se tallentaisi tyhjän olion listaan aina sivun päivittäessä
+  const [firstRender, setFR] = React.useState(true);
+
+  // tämän callback-funktion ansiosta saamme nostettua dataa TodoForm.js:stä
+  //ja tallennettua se App.js:n input stateen
+  //se onnistuu antamalla tämä funktio propsina ( alhaalla <TodoForm callback={formCallback} /> )
+
+  //Kun tätä funktiota kutsutaan TodoForm.js:ssä, laitetaan "inputData":n tilalle se data
+  //mikä halutaan lähettää App.Js:lle
   const formCallback = inputData => {
     setInput(inputData);
-  };
-
-  const listCallback = listData => {
-
-    setList(...listData, input);
+    if (firstRender) {
+      setFR(false);
+    }
   };
 
   return (
     <div className="App">
       <header className="App-header">TodoList</header>
       <TodoForm callback={formCallback} />
-      <Todolist callback={listCallback} list={list}  />
+      <TodoTable input={input} render={firstRender} />
     </div>
   );
 }
