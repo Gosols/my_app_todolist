@@ -1,5 +1,5 @@
 import React from "react";
-import ReactTable from "react-table-v6";
+import Paska from "react-table-v6";
 import "react-table-v6/react-table.css";
 
 export default function TodoTable(props) {
@@ -38,5 +38,5 @@ export default function TodoTable(props) {
     }
   ];
 
-  return <ReactTable data={todos} columns={columns} />;
+  return <Paska data={todos} columns={columns} />;
 }
